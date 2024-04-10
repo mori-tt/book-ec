@@ -10,7 +10,9 @@ export const getAllBooks = async () => {
   const allBooks = await client.getList<BookType>({
     endpoint: "book-ec",
     customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
+      next: {
+        revalidate: 3600, // ISR 60m
+      },
     },
   });
   return allBooks;
@@ -21,7 +23,7 @@ export const getDetailBook = async (contentId: string) => {
     endpoint: "book-ec",
     contentId,
     customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
+      cache: "no-store", // SSR キャッシュを利用せずに常に新しいデータを取得する
     },
   });
   return detailBook;
