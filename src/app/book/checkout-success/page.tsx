@@ -31,7 +31,7 @@ const PurchaseSuccess = () => {
     };
     fetchData();
     // console.log(bookUrl);
-  }, []);
+  }, [sessionId]); // sessionIdを依存配列に追加
 
   return (
     <div className="flex items-center justify-center mt-20">
