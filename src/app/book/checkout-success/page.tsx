@@ -30,6 +30,7 @@ const PurchaseSuccess = () => {
       }
     };
     fetchData();
+    // console.log(bookUrl);
   }, []);
 
   return (
