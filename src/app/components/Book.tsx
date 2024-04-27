@@ -71,7 +71,7 @@ const Book = ({ book, isPurchased, user }: BookProps) => {
   return (
     <>
       {/* アニメーションスタイル */}
-      <style jsx global>{`
+      {/* <style jsx global>{`
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -84,6 +84,17 @@ const Book = ({ book, isPurchased, user }: BookProps) => {
         }
         .modal {
           animation: fadeIn 0.3s ease-out forwards;
+        }
+      `}</style> */}
+
+      <style jsx global>{`
+        @media (max-width: 768px) {
+          .modal {
+            @apply w-11/12 h-auto p-5;
+          }
+          .book-container {
+            @apply flex-col;
+          }
         }
       `}</style>
 

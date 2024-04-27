@@ -23,7 +23,10 @@ const PurchaseDetailBook = ({
         height={350}
         className="rounded-t-md"
       /> */}
-      <div className="relative" style={{ width: "450px", height: "350px" }}>
+      <div
+        className="relative w-full h-auto"
+        style={{ width: "450px", height: "350px" }}
+      >
         <Image
           priority
           src={purchaseDetailBook.thumbnail.url}
